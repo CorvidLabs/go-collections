@@ -11,6 +11,8 @@ Type-safe concurrent data structures for Go, built with generics (Go 1.22+).
 | `Set[T]` | Hash set with union, intersection, and difference operations |
 | `RingBuffer[T]` | Fixed-size circular buffer that overwrites oldest entries when full |
 | `Pool[T]` | Object pool with configurable factory and max size |
+| `LRU[K, V]` | Bounded key-value cache with least-recently-used eviction |
+| `PriorityQueue[T]` | Heap-backed priority queue with configurable ordering |
 
 ## Install
 
@@ -52,6 +54,18 @@ pool := collections.NewPool(func() []byte {
 }, 20)
 buf := pool.Get()
 defer pool.Put(buf)
+
+// LRU cache (evicts least recently used)
+cache := collections.NewLRU[string, int](100)
+cache.Put("score", 99)
+v, ok = cache.Get("score") // 99, true (marks as recently used)
+
+// Priority queue (min-heap by default)
+pq := collections.NewPriorityQueue(func(a, b int) bool { return a < b })
+pq.Push(5)
+pq.Push(1)
+pq.Push(3)
+top, ok := pq.Pop() // 1, true (lowest value first)
 ```
 
 ## Thread Safety

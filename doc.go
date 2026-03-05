@@ -8,4 +8,6 @@
 //   - Set[T]: Concurrent hash set with bulk operations
 //   - RingBuffer[T]: Fixed-size circular buffer
 //   - Pool[T]: Object pool with configurable factory
+//   - LRU[K, V]: Bounded key-value cache with least-recently-used eviction
+//   - PriorityQueue[T]: Heap-backed priority queue with configurable ordering
 package collections
