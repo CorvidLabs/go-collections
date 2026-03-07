@@ -361,3 +361,104 @@ func BenchmarkPoolVsSyncPool(b *testing.B) {
 		}
 	})
 }
+
+// --- LRU benchmarks ---
+
+func BenchmarkLRUPut(b *testing.B) {
+	c := NewLRU[int, int](1000)
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		c.Put(i, i)
+	}
+}
+
+func BenchmarkLRUGet(b *testing.B) {
+	c := NewLRU[int, int](1000)
+	for i := 0; i < 1000; i++ {
+		c.Put(i, i)
+	}
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		c.Get(i % 1000)
+	}
+}
+
+func BenchmarkLRUPutEvict(b *testing.B) {
+	c := NewLRU[int, int](100)
+	// Fill to capacity
+	for i := 0; i < 100; i++ {
+		c.Put(i, i)
+	}
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		c.Put(i+100, i)
+	}
+}
+
+func BenchmarkLRUConcurrentGetPut(b *testing.B) {
+	c := NewLRU[int, int](1000)
+	for i := 0; i < 1000; i++ {
+		c.Put(i, i)
+	}
+	b.RunParallel(func(pb *testing.PB) {
+		i := 0
+		for pb.Next() {
+			if i%2 == 0 {
+				c.Put(i%1000, i)
+			} else {
+				c.Get(i % 1000)
+			}
+			i++
+		}
+	})
+}
+
+// --- PriorityQueue benchmarks ---
+
+func BenchmarkPQPush(b *testing.B) {
+	pq := NewPriorityQueue(func(a, b int) bool { return a < b })
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		pq.Push(i)
+	}
+}
+
+func BenchmarkPQPushPop(b *testing.B) {
+	pq := NewPriorityQueue(func(a, b int) bool { return a < b })
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		pq.Push(i)
+		pq.Pop()
+	}
+}
+
+func BenchmarkPQDrain(b *testing.B) {
+	for _, size := range []int{10, 100, 1000} {
+		b.Run(fmt.Sprintf("size=%d", size), func(b *testing.B) {
+			for i := 0; i < b.N; i++ {
+				b.StopTimer()
+				pq := NewPriorityQueue(func(a, b int) bool { return a < b })
+				for j := 0; j < size; j++ {
+					pq.Push(j)
+				}
+				b.StartTimer()
+				pq.Drain()
+			}
+		})
+	}
+}
+
+func BenchmarkPQConcurrentPushPop(b *testing.B) {
+	pq := NewPriorityQueue(func(a, b int) bool { return a < b })
+	b.RunParallel(func(pb *testing.PB) {
+		i := 0
+		for pb.Next() {
+			if i%2 == 0 {
+				pq.Push(i)
+			} else {
+				pq.Pop()
+			}
+			i++
+		}
+	})
+}
