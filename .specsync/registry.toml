@@ -1,0 +1,5 @@
+[registry]
+name = "go-collections-trust-wave7"
+
+[specs]
+collections = "specs/collections/collections.spec.md"
