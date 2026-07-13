@@ -1,6 +1,6 @@
 ---
 id: CHG-0001-adopt-specsync-5-0-1-and-trust-1-0-0-governance-for-go-collections
-state: implementing
+state: accepted
 type: migration
 base_commit: a73bc173225a77e655aeb3cec8f7c30659cfe1c8
 ---
