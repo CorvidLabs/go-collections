@@ -6,6 +6,14 @@
       "timestamp": 1783958394,
       "digest": "d8d489d7e3685869dd9d7547cbbdd2b2eb75e4e2ba660b89d22b1b2a2b932277",
       "note": "Definition approval after review of truthful completed preparation/configuration tasks, canonical requirements, and previously completed native verification; hosted CI and closing approval remain later gates."
+    },
+    {
+      "gate": "definition",
+      "actor": "user:0xLeif",
+      "timestamp": 1783962851,
+      "digest": "31c53a229d97630ae8cf416a1173fe911a1f785f955796e1ca1e298527126685",
+      "note": "Fresh definition approval after the explicitly authorized lifecycle reset and truthful requirement-to-test evidence mapping."
     }
-  ]
+  ],
+  "reopenings": []
 }
