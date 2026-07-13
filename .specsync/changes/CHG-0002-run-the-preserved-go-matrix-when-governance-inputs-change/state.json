@@ -5,10 +5,11 @@
   "title": "Run the preserved Go matrix when governance inputs change",
   "description": "Run the preserved Go matrix when governance inputs change",
   "kind": "bug_fix",
-  "state": "implementing",
+  "state": "accepted",
+  "canonical_applied": true,
   "base_commit": "043f70384b0cc269d651bd209a33dcae1714fc87",
   "created_at": 1783963223,
-  "updated_at": 1783963318,
+  "updated_at": 1783963442,
   "affected_specs": [],
   "affected_paths": [
     ".github/workflows/go.yml"

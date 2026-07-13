@@ -9,7 +9,7 @@
   "canonical_applied": true,
   "base_commit": "a73bc173225a77e655aeb3cec8f7c30659cfe1c8",
   "created_at": 1783884324,
-  "updated_at": 1783962933,
+  "updated_at": 1783963420,
   "affected_specs": [
     "collections"
   ],

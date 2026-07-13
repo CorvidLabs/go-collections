@@ -20,7 +20,56 @@
       "timestamp": 1783962933,
       "digest": "4053465be11fa29184af7969065cd8b3ff44d1fcd517d587e7d6b7830bc168af",
       "note": "Closing approval after committed-head formatting, vet, complete race-test suite, build, and all six requirement evidence mappings passed."
+    },
+    {
+      "gate": "acceptance",
+      "actor": "user:0xLeif",
+      "timestamp": 1783963420,
+      "digest": "8e99be4546b847cc625e255242c3d898086b65708909f8aaa30a64c485858ef7",
+      "note": "Fresh closing approval after audited reopen and successful native verification on the approved CHG2 scheduling commit; preserve prior approval history and accepted canonical deltas."
     }
   ],
-  "reopenings": []
+  "reopenings": [
+    {
+      "schema_version": 1,
+      "change_id": "CHG-0001-adopt-specsync-5-0-1-and-trust-1-0-0-governance-for-go-collections",
+      "actor": "user:0xLeif",
+      "reason": "The approved CHG2 workflow scheduling correction changed current delivery inputs and requires fresh native verification; CHG1 semantic deltas remain accepted and must not replay.",
+      "timestamp": 1783963394,
+      "from_state": "accepted",
+      "to_state": "verifying",
+      "superseded_approval": {
+        "gate": "acceptance",
+        "actor": "user:0xLeif",
+        "timestamp": 1783962933,
+        "digest": "4053465be11fa29184af7969065cd8b3ff44d1fcd517d587e7d6b7830bc168af",
+        "note": "Closing approval after committed-head formatting, vet, complete race-test suite, build, and all six requirement evidence mappings passed."
+      },
+      "prior_verification": {
+        "timestamp": 1783962928,
+        "commit": "e03ae73a13a1c8b935344ef05ce6b84af1c68696",
+        "contract_digest": "31c53a229d97630ae8cf416a1173fe911a1f785f955796e1ca1e298527126685",
+        "workspace_digest": "8953558371e8abdd3cb93a03319d5f15016cbcc96936f37fd8df89ce3e04413d",
+        "acceptance_input_digest": "0914166c2b91ec35d32f8999248672222800989b225af840e8d3d3337de7997e",
+        "passed": true,
+        "commands": [
+          {
+            "command": "fledge lanes run verify",
+            "success": true,
+            "exit_code": 0
+          }
+        ],
+        "requirement_ids": [
+          "REQ-collections-001",
+          "REQ-collections-002",
+          "REQ-collections-003",
+          "REQ-collections-004",
+          "REQ-collections-005",
+          "REQ-collections-006"
+        ]
+      },
+      "stale_acceptance_input_digest": "0914166c2b91ec35d32f8999248672222800989b225af840e8d3d3337de7997e",
+      "current_acceptance_input_digest": "204943e6e55c2a0c3f51d35e9f0b488c550f6f891e21b4265295f881fc095fc7"
+    }
+  ]
 }

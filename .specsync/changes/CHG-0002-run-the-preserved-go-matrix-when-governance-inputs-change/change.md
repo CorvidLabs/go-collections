@@ -1,6 +1,6 @@
 ---
 id: CHG-0002-run-the-preserved-go-matrix-when-governance-inputs-change
-state: implementing
+state: accepted
 type: bug_fix
 base_commit: 043f70384b0cc269d651bd209a33dcae1714fc87
 ---

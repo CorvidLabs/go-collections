@@ -6,6 +6,13 @@
       "timestamp": 1783963318,
       "digest": "5c84c0ede0c9bcfe723509f02c9c12b5bccadcd6166fba0f725459b11ed6ba58",
       "note": "Definition approval for the reviewed scheduling-only correction: governance inputs must run the preserved Go matrix without changing its jobs, versions, or commands."
+    },
+    {
+      "gate": "acceptance",
+      "actor": "user:0xLeif",
+      "timestamp": 1783963442,
+      "digest": "9bffe1311389d0fa2fc24f05a8ef308894be2551ada3043533f82ab173e810bd",
+      "note": "Closing approval after the exact +8 scheduling-only workflow diff passed native formatting, vet, race-enabled tests, build, and lifecycle verification; hosted Trust and Go matrix results remain external."
     }
   ],
   "reopenings": []
