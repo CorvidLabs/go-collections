@@ -1,0 +1,19 @@
+{
+  "approvals": [
+    {
+      "gate": "definition",
+      "actor": "user:0xLeif",
+      "timestamp": 1784000082,
+      "digest": "0e5f2648672db779d89bf9c63c3add45139f96a17c8ea6b4be5ffe3ca6fd9b9b",
+      "note": "Definition approved for the exact enumerated non-Go rollout range with prior histories preserved and no product behavior change."
+    },
+    {
+      "gate": "acceptance",
+      "actor": "user:0xLeif",
+      "timestamp": 1784000103,
+      "digest": "2f1c4b7bf4ac1cc1070941d550160853345f8e72f7909574a765ecee62393dc6",
+      "note": "Closing approval after native verification passed for the complete explicitly enumerated non-Go rollout range with all prior history preserved."
+    }
+  ],
+  "reopenings": []
+}

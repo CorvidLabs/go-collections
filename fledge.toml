@@ -1,0 +1,19 @@
+[tasks.fmt]
+cmd = "test -z \"$(gofmt -l .)\""
+description = "Verify Go formatting"
+
+[tasks.vet]
+cmd = "go vet ./..."
+description = "Run Go static analysis"
+
+[tasks.test]
+cmd = "go test -v -race -count=1 ./..."
+description = "Run tests with the race detector"
+
+[tasks.build]
+cmd = "go build ./..."
+description = "Build every package"
+
+[lanes.verify]
+description = "Format, vet, test, and build the collections package"
+steps = ["fmt", "vet", "test", "build"]

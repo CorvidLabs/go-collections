@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "id": "CHG-0003-correct-the-go-collections-rollout-contract-and-verification-configuration-witho",
+  "slug": "correct-the-go-collections-rollout-contract-and-verification-configuration-witho",
+  "title": "Correct the go-collections rollout contract and verification configuration without changing product behavior",
+  "description": "Correct the go-collections rollout contract and verification configuration without changing product behavior",
+  "kind": "migration",
+  "state": "accepted",
+  "base_commit": "d6ea415769a14c2128b9c56355f321b789cc22b8",
+  "created_at": 1783999205,
+  "updated_at": 1783999426,
+  "affected_specs": [
+    "collections"
+  ],
+  "affected_paths": [
+    "specs/collections/requirements.md",
+    ".specsync/config.toml",
+    ".trust.toml",
+    ".gemini/commands/specsync/create-change.toml",
+    ".claude/commands/specsync/create-spec.md"
+  ],
+  "no_spec_change": false,
+  "no_spec_change_rationale": null,
+  "acceptance_criteria": [
+    "The canonical concurrency requirement states only behavior the current implementation guarantees; Go source coverage is 100 percent without treating workflow YAML as product source; Trust enforces 100 percent coverage; Claude and Gemini prompts preserve free-text arguments; native Go verification and strict SpecSync 5.0.1 and Trust and the hosted Go matrix pass."
+  ],
+  "selected_artifacts": [
+    "context",
+    "research",
+    "design",
+    "plan",
+    "tasks",
+    "testing",
+    "docs",
+    "requirements"
+  ],
+  "dependencies": [],
+  "answers": {
+    "architecture_risk": "no",
+    "public_contract": "yes"
+  }
+}
