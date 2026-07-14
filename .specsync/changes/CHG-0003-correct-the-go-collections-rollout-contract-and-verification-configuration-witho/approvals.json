@@ -1,0 +1,32 @@
+{
+  "approvals": [
+    {
+      "gate": "definition",
+      "actor": "user:0xLeif",
+      "timestamp": 1783999325,
+      "digest": "a0add7ddccb0a7d997b37b89f692d8a8e08bafdf0aa6224f545a101a8e37b365",
+      "note": "Definition approved for accurate non-behavioral rollout corrections and truthful 100 percent verification."
+    },
+    {
+      "gate": "definition",
+      "actor": "user:0xLeif",
+      "timestamp": 1783999366,
+      "digest": "0923d34c339ea5a6bdfbb8ab793a9818339df66fb466eb42002aafdee2abe088",
+      "note": "Definition reapproved after truthful completion-state wording; no delivery scope or product behavior changed."
+    },
+    {
+      "gate": "definition",
+      "actor": "user:0xLeif",
+      "timestamp": 1783999403,
+      "digest": "864804e156521b601caa612a7d3b989a82a24938d5d7ef37dd8a68c07b316c70",
+      "note": "Definition reapproved with explicit REQ-collections-001 evidence mapping to the race suite and source contract review."
+    },
+    {
+      "gate": "acceptance",
+      "actor": "user:0xLeif",
+      "timestamp": 1783999426,
+      "digest": "91402d7df977922b99a52670d89f478c496db73c3c17d0bd14e1a08dfbb7b704",
+      "note": "Closing approval after native formatting, vet, race-enabled tests, build, and explicit REQ-collections-001 evidence passed with the accurate contract delta."
+    }
+  ]
+}

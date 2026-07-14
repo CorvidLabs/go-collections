@@ -11,10 +11,11 @@ spec: collections.spec.md
 
 ### REQ-collections-001
 
-All exported collection operations SHALL remain safe under concurrent use.
+Exported single-collection operations SHALL remain safe under concurrent use. Callers SHALL externally serialize opposite-direction `Union`, `Intersection`, or `Difference` calls over the same set pair when concurrent mutations may be pending.
 
 Acceptance Criteria
 - The complete package test suite passes under Go's race detector.
+- The canonical contract does not claim deadlock-free lock ordering across two independently locked sets.
 
 ### REQ-collections-002
 

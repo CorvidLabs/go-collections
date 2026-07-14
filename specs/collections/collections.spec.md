@@ -1,6 +1,6 @@
 ---
 module: collections
-version: 2
+version: 3
 status: active
 files:
   - doc.go
@@ -128,7 +128,7 @@ object pools, and a typed wrapper around `sync.Map`.
 
 ## Invariants
 
-1. Public collection operations are safe for concurrent callers.
+1. Single-collection operations are safe for concurrent callers; callers externally serialize opposite-direction set-algebra operations over the same pair when concurrent mutations may be pending.
 2. Empty lookup/pop operations return the element type's zero value with `false`.
 3. Non-positive capacities normalize to a usable minimum where the type requires capacity.
 4. Bounded queues reject pushes at capacity; ring buffers accept pushes and report the oldest evicted value.
@@ -162,3 +162,4 @@ Then the oldest value is returned as evicted and remaining values preserve FIFO 
 |---------|------|---------|
 | 1 | 2026-07-12 | Initial active specification of existing collection behavior |
 | 2026-07-13 | CHG-0001-adopt-specsync-5-0-1-and-trust-1-0-0-governance-for-go-collections: Adopt SpecSync 5.0.1 and Trust 1.0.0 governance for go-collections |
+| 2026-07-14 | CHG-0003-correct-the-go-collections-rollout-contract-and-verification-configuration-witho: Correct the go-collections rollout contract and verification configuration without changing product behavior |
